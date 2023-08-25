@@ -1,0 +1,15 @@
+C:\Taller2\Tps\tl2-tp1-2023-VarelaJoseAlberto\obj\Debug\net7.0\tl2-tp1-2023-VarelaJoseAlberto.csproj.AssemblyReference.cache
+C:\Taller2\Tps\tl2-tp1-2023-VarelaJoseAlberto\obj\Debug\net7.0\tl2-tp1-2023-VarelaJoseAlberto.GeneratedMSBuildEditorConfig.editorconfig
+C:\Taller2\Tps\tl2-tp1-2023-VarelaJoseAlberto\obj\Debug\net7.0\tl2-tp1-2023-VarelaJoseAlberto.AssemblyInfoInputs.cache
+C:\Taller2\Tps\tl2-tp1-2023-VarelaJoseAlberto\obj\Debug\net7.0\tl2-tp1-2023-VarelaJoseAlberto.AssemblyInfo.cs
+C:\Taller2\Tps\tl2-tp1-2023-VarelaJoseAlberto\obj\Debug\net7.0\tl2-tp1-2023-VarelaJoseAlberto.csproj.CoreCompileInputs.cache
+C:\Taller2\Tps\tl2-tp1-2023-VarelaJoseAlberto\bin\Debug\net7.0\tl2-tp1-2023-VarelaJoseAlberto.exe
+C:\Taller2\Tps\tl2-tp1-2023-VarelaJoseAlberto\bin\Debug\net7.0\tl2-tp1-2023-VarelaJoseAlberto.deps.json
+C:\Taller2\Tps\tl2-tp1-2023-VarelaJoseAlberto\bin\Debug\net7.0\tl2-tp1-2023-VarelaJoseAlberto.runtimeconfig.json
+C:\Taller2\Tps\tl2-tp1-2023-VarelaJoseAlberto\bin\Debug\net7.0\tl2-tp1-2023-VarelaJoseAlberto.dll
+C:\Taller2\Tps\tl2-tp1-2023-VarelaJoseAlberto\bin\Debug\net7.0\tl2-tp1-2023-VarelaJoseAlberto.pdb
+C:\Taller2\Tps\tl2-tp1-2023-VarelaJoseAlberto\obj\Debug\net7.0\tl2-tp1-2023-VarelaJoseAlberto.dll
+C:\Taller2\Tps\tl2-tp1-2023-VarelaJoseAlberto\obj\Debug\net7.0\refint\tl2-tp1-2023-VarelaJoseAlberto.dll
+C:\Taller2\Tps\tl2-tp1-2023-VarelaJoseAlberto\obj\Debug\net7.0\tl2-tp1-2023-VarelaJoseAlberto.pdb
+C:\Taller2\Tps\tl2-tp1-2023-VarelaJoseAlberto\obj\Debug\net7.0\tl2-tp1-2023-VarelaJoseAlberto.genruntimeconfig.cache
+C:\Taller2\Tps\tl2-tp1-2023-VarelaJoseAlberto\obj\Debug\net7.0\ref\tl2-tp1-2023-VarelaJoseAlberto.dll
