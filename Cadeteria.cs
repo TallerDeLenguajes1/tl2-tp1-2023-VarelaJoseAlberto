@@ -1,6 +1,7 @@
 namespace CadeteriaClass
 {
     using CadeteClass;
+    using PedidosClass;
 
     public class Cadeteria
     {
@@ -10,6 +11,7 @@ namespace CadeteriaClass
         private int totalEnvios;
         private float totalGanado;
         private double cantPromedioEnvios;
+        public List<Pedido> ListadoPedidos { get; set; } = new List<Pedido>();
 
         public string Nombre { get => nombre; set => nombre = value; }
         public string Telefono { get => telefono; set => telefono = value; }
@@ -23,8 +25,7 @@ namespace CadeteriaClass
         {
             this.nombre = nombre;
             this.telefono = telefono;
-            this.listadoCadetes = new List<Cadete>();
-            this.listadoCadetes.AddRange(listadoCadetes);
+            this.listadoCadetes = listadoCadetes;
             this.totalEnvios = 0;
             this.totalGanado = 0.0f;
             this.cantPromedioEnvios = 0.0f;
@@ -59,18 +60,22 @@ namespace CadeteriaClass
 
         public void Informe()
         {
-            this.Total();
+            Total();
             Console.WriteLine("MOSTRAR INFORME");
             Console.WriteLine("Datos Cadetes");
-            foreach (var item in this.listadoCadetes)
+            foreach (var item in listadoCadetes)
             {
                 Console.WriteLine($"{item.Nombre}: {item.CantEnvios} {item.CantGanado}");
             }
             Console.WriteLine("Datos de Cadeteria");
-            Console.WriteLine($"Toral Ganado: {this.TotalGanado}");
-            Console.WriteLine($"Toral Envios: {this.totalEnvios}");
+            Console.WriteLine($"Total Ganado: {this.TotalGanado}");
+            Console.WriteLine($"Total Envios: {this.TotalEnvios}");
             Console.WriteLine($"Promedio de Envios: {this.CantPromedioEnvios}");
+            Console.WriteLine("Listado de Pedidos:");
+            foreach (var pedido in this.ListadoPedidos)
+            {
+                Console.WriteLine($"Pedido Nombre: {pedido.Nombre}, Estado: {pedido.Estado}");
+            }
         }
     }
-
 }

@@ -50,10 +50,22 @@ namespace CadeteClass
 
         public void AsignarPedido(Pedido pedido)
         {
-            this.listaPedido.Add(pedido);
-            this.cantEnvios += 1;
-            this.cantGanado = (float)CalcularJornal();
+            if (pedido != null)
+            {
+                if (listaPedido == null)
+                {
+                    listaPedido = new List<Pedido>();
+                }
+                listaPedido.Add(pedido);
+                cantEnvios += 1;
+                cantGanado = (float)CalcularJornal();
+            }
+            else
+            {
+                Console.WriteLine("El pedido proporcionado es nulo.");
+            }
         }
+
         public double CalcularJornal()
         {
             int cantidadPedidosEntregados = listaPedido.Count(p => p.Estado == EstadoPedido.Entregado);
@@ -78,19 +90,30 @@ namespace CadeteClass
             }
         }
 
+        // public void Mostrar()
+        // {
+        //     int cont = 1;
+        //     Console.WriteLine($"Nombre: {this.nombre}");
+        //     Console.WriteLine($"Telefono: {this.telefono}");
+        //     foreach (var item in listadoCadetes)
+        //     {
+        //         Console.WriteLine($"Cadete {cont}");
+        //         if (item != null) // Verifica si el cadete no es null antes de mostrarlo
+        //         {
+        //             item.Mostrar();
+        //         }
+        //         cont += 1;
+        //     }
+        // }
+
         public void Mostrar()
         {
-            int cont = 1;
-            Console.WriteLine($"id: {this.id}");
-            Console.WriteLine($"nombre: {this.nombre}");
-            Console.WriteLine($"Direccion: {this.direccion}");
-            Console.WriteLine("Pedidos.\n");
-            foreach (var item in this.listaPedido)
-            {
-                Console.Write($"{cont}. ");
-                item.VerDatosCliente();
-                cont += 1;
-            }
+            Console.WriteLine($"Nombre: {this.nombre}");
+            Console.WriteLine($"Telefono: {this.telefono}");
+            Console.WriteLine($"Dirección: {this.direccion}");
+            Console.WriteLine($"Cantidad de Envíos: {this.cantEnvios}");
+            Console.WriteLine($"Ganancias: {this.cantGanado}");
         }
+
     }
 }

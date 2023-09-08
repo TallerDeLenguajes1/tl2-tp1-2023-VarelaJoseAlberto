@@ -39,6 +39,7 @@ internal partial class Program
                         pedidotomado = DarDeAlta(nroDePedido);
                         nroDePedido += 1;
                         pedidotomado.VerDatosCliente();
+                        cadeteriaSeleccionada.ListadoPedidos.Add(pedidotomado);
                         break;
                     case "b":
                         if (pedidotomado != null)
@@ -47,15 +48,15 @@ internal partial class Program
                         }
                         break;
                     case "c":
-                        pedidotomado.CambiarDeEstado(pedidotomado, cadeteAsignado);
-
-
+                        if (pedidotomado != null)
+                        {
+                            CambiarEstadoPedido(pedidotomado, cadeteriaSeleccionada);
+                        }
                         break;
                     case "d":
                         cadeteAsignado.QuitarPedido(pedidotomado);
                         var CambiarCadete = AsignarCadete(listaCadetes, pedidotomado);
                         break;
-
                 }
             }
             cadeteriaSeleccionada.Informe();
@@ -67,7 +68,23 @@ internal partial class Program
 
 
     }
-
+    private static void CambiarEstadoPedido(Pedido pedido, Cadeteria cadeteriaSeleccionada)
+    {
+        Console.WriteLine("Seleccione el estado en que desea colocar el pedido");
+        Console.WriteLine("1. Rechazado");
+        Console.WriteLine("2. Pendiente");
+        var ingresarEstado = Console.ReadLine();
+        if (ingresarEstado == "1")
+        {
+            pedido.CambiarDeEstado(EstadoPedido.Rechazado);
+            // Remover el pedido de la lista de pedidos de la cadeteria seleccionada
+            cadeteriaSeleccionada.ListadoPedidos.Remove(pedido);
+        }
+        else
+        {
+            pedido.CambiarDeEstado(EstadoPedido.Pendiente);
+        }
+    }
     private static Cadete AsignarCadete(List<Cadete> listaCadetes, Pedido pedidotomado)
     {
         Console.WriteLine("Elige el cadete que desea asignar");

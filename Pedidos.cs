@@ -49,35 +49,23 @@ namespace PedidosClass
             Console.WriteLine($"Nombre: {this.nombre}");
             Console.WriteLine($"Observacion: {this.observacion}");
             Console.WriteLine("Datos del Cliente");
-            this.NombreCliente.Mostrar();
+            NombreCliente.Mostrar();
             Console.WriteLine($"Estado: {this.estado}");
 
         }
         public void AceptarPedido()
         {
-            this.estado = EstadoPedido.Aceptado;
+            estado = EstadoPedido.Aceptado;
         }
 
         public void RechazarPedido()
         {
-            this.estado = EstadoPedido.Rechazado;
+            estado = EstadoPedido.Rechazado;
         }
         // Método para cambiar el estado del pedido
-        public void CambiarDeEstado(Pedido pedidotomado, Cadete cadeteAsignado)
+        public void CambiarDeEstado(EstadoPedido nuevoEstado)
         {
-            Console.WriteLine("Seleccione el estado en que desea colocar el pedido");
-            Console.WriteLine("1. Rechazado");
-            Console.WriteLine("2. Pendiente");
-            var ingresarEstado = Console.ReadLine();
-            if (ingresarEstado == "1")
-            {
-                pedidotomado.Estado = EstadoPedido.Rechazado;
-                cadeteAsignado.QuitarPedido(pedidotomado);
-            }
-            else
-            {
-                pedidotomado.Estado = EstadoPedido.Pendiente;
-            }
+            Estado = nuevoEstado;
         }
 
     }
