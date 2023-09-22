@@ -1,8 +1,8 @@
+using ClienteClass;
+using CadeteClass;
+
 namespace PedidosClass
 {
-    using ClienteClass;
-    using CadeteClass;
-
     public enum EstadoPedido
     {
         Pendiente,
@@ -12,61 +12,77 @@ namespace PedidosClass
     }
     public class Pedido
     {
-        // public Cadete cadete;//agrego
-        private int id;
-        private string? nombre;
-        private Cliente? nombreCliente;
-        private string? observacion;
+        private int idPedido;
+        private string nombrePedido;
+        private Cliente nombreCliente;
         private EstadoPedido estado;
+        private Cadete cadeteAsignado;
 
-        public int Id { get => id; set => id = value; }
-        public string? Nombre { get => nombre; set => nombre = value; }
-        public Cliente? NombreCliente { get => nombreCliente; set => nombreCliente = value; }
-        public string? Observacion { get => observacion; set => observacion = value; }
+
+        public int IdPedido { get => idPedido; set => idPedido = value; }
+        public string NombrePedido { get => nombrePedido; set => nombrePedido = value; }
+        public Cliente NombreCliente { get => nombreCliente; set => nombreCliente = value; }
         public EstadoPedido Estado { get => estado; set => estado = value; }
+        public Cadete CadeteAsignado { get => cadeteAsignado; set => cadeteAsignado = value; }
 
-
-        public Pedido(int id, string? nombre, Cliente? nombreCliente, string? observacion, EstadoPedido estado)
+        public Pedido(int idPedido, string nombrePedido, Cliente nombreCliente)
         {
-            this.id = id;
-            this.nombre = nombre;
+            this.idPedido = idPedido;
+            this.nombrePedido = nombrePedido;
             this.nombreCliente = nombreCliente;
-            this.observacion = observacion;
-            this.estado = EstadoPedido.Pendiente;
+            estado = EstadoPedido.Pendiente;
+            cadeteAsignado = null;
         }
 
         public Pedido()
         {
-            this.id = 0;
-            this.nombre = "";
-            this.nombreCliente = new Cliente();
-            this.estado = EstadoPedido.Pendiente;
+            IdPedido = 0;
+            nombrePedido = "";
+            nombreCliente = new Cliente();
+            estado = EstadoPedido.Pendiente;
+            cadeteAsignado = null;
         }
 
-        public void VerDatosCliente()
+        public void MostrarPedidos()
         {
-            Console.WriteLine($"Numero de id: {this.id}");
-            Console.WriteLine($"Nombre: {this.nombre}");
-            Console.WriteLine($"Observacion: {this.observacion}");
+            Console.WriteLine("\n --------------------------- \n");
+            Console.WriteLine($"Numero de id del Pedido: {IdPedido}");
+            Console.WriteLine($"Nombre del Pedido: {nombrePedido}");
+            Console.WriteLine($"Estado del Pedido: {estado}");
             Console.WriteLine("Datos del Cliente");
-            NombreCliente.Mostrar();
-            Console.WriteLine($"Estado: {this.estado}");
-
+            NombreCliente.MostrarCliente();
+            if (cadeteAsignado == null)
+            {
+                Console.WriteLine("No hay asignado cadete");
+            }
+            else
+            {
+                Console.WriteLine($"Cadete Asignado: {cadeteAsignado.NombreCadete}");
+            }
+            Console.WriteLine("\n --------------------------- \n");
         }
+
+        public void AsignarCadete(Cadete cadete)
+        {
+            cadeteAsignado = cadete;
+        }
+
         public void AceptarPedido()
         {
-            estado = EstadoPedido.Aceptado;
+            if (estado == EstadoPedido.Pendiente)
+            {
+                estado = EstadoPedido.Aceptado;
+                if (estado == EstadoPedido.Rechazado)
+                {
+                    Console.WriteLine("Pedido Rechazado");
+                }
+            }
         }
 
         public void RechazarPedido()
         {
             estado = EstadoPedido.Rechazado;
+            cadeteAsignado = null;
         }
-        // Método para cambiar el estado del pedido
-        public void CambiarDeEstado(EstadoPedido nuevoEstado)
-        {
-            Estado = nuevoEstado;
-        }
-
     }
 }

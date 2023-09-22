@@ -2,38 +2,39 @@ namespace ClienteClass
 {
     public class Cliente
     {
-        private string? nombre;
-        private string? direccion;
-        private string telefono;
-        private string? datosReferenciaDireccion;
+        private string nombreCliente;
+        private string direccionCliente;
+        private string telefonoCliente;
+        private string datosReferenciaDireccionCliente;
 
-        public string? Nombre { get => nombre; set => nombre = value; }
-        public string? Direccion { get => direccion; set => direccion = value; }
-        public string Telefono { get => telefono; set => telefono = value; }
-        public string? DatosReferenciaDireccion { get => datosReferenciaDireccion; set => datosReferenciaDireccion = value; }
 
-        public Cliente(string? nombre, string? direccion, string telefono, string? datosReferenciaDireccion)
+        public string NombreCliente { get => nombreCliente; set => nombreCliente = value; }
+        public string DireccionCliente { get => direccionCliente; set => direccionCliente = value; }
+        public string TelefonoCliente { get => telefonoCliente; set => telefonoCliente = value; }
+        public string DatosReferenciaDireccionCliente { get => datosReferenciaDireccionCliente; set => datosReferenciaDireccionCliente = value; }
+
+        public Cliente(string nombreCliente, string direccionCliente, string telefonoCliente, string datosReferenciaDireccionCliente)
         {
-            this.nombre = nombre;
-            this.direccion = direccion;
-            this.telefono = telefono;
-            this.datosReferenciaDireccion = datosReferenciaDireccion;
+            this.nombreCliente = nombreCliente;
+            this.direccionCliente = direccionCliente;
+            this.telefonoCliente = telefonoCliente;
+            this.datosReferenciaDireccionCliente = datosReferenciaDireccionCliente;
         }
 
         public Cliente()
         {
-            this.nombre = "";
-            this.direccion = "";
-            this.telefono = "";
-            this.datosReferenciaDireccion = "";
+            nombreCliente = "";
+            telefonoCliente = "";
+            datosReferenciaDireccionCliente = "";
+            direccionCliente = "";
         }
 
-        public void Mostrar()
+        public void MostrarCliente()
         {
-            Console.WriteLine($"Nombre: {this.nombre}");
-            Console.WriteLine($"Direccion: {this.direccion}");
-            Console.WriteLine($"Telefono: {this.telefono}");
-            Console.WriteLine($"Datos Referencia Direccion: {this.datosReferenciaDireccion}");
+            Console.WriteLine($"Nombre del Cliente: {nombreCliente}");
+            Console.WriteLine($"Direccion del Cliente: {direccionCliente}");
+            Console.WriteLine($"Telefono del Cliente: {telefonoCliente}");
+            Console.WriteLine($"Datos Referencia Direccion: {datosReferenciaDireccionCliente}");
         }
     }
 }

@@ -1,0 +1,32 @@
+[
+  {
+    "NombreCadeteria": "Pedido Ya",
+    "ListadoCadetes": [],
+    "ListadoPedidos": [],
+    "TelefonoCadeteria": "(123)456789"
+  },
+  {
+    "NombreCadeteria": "Buen Gusto",
+    "ListadoCadetes": [],
+    "ListadoPedidos": [],
+    "TelefonoCadeteria": "321-987654"
+  },
+  {
+    "NombreCadeteria": "Alto Churro",
+    "ListadoCadetes": [],
+    "ListadoPedidos": [],
+    "TelefonoCadeteria": "(987) 456 - 985"
+  },
+  {
+    "NombreCadeteria": "buen gusto",
+    "ListadoCadetes": [],
+    "ListadoPedidos": [],
+    "TelefonoCadeteria": "456"
+  },
+  {
+    "NombreCadeteria": "alto lomo",
+    "ListadoCadetes": [],
+    "ListadoPedidos": [],
+    "TelefonoCadeteria": "987"
+  }
+]
