@@ -75,7 +75,7 @@ namespace AccesoAArchivoClass
                     string direccion = cadeteInfo[2];
 
                     // Crear una instancia de Cadete y agregarla a la lista
-                    nuevoCadete = new Cadete(nombre, direccion, telefono);
+                    nuevoCadete = new Cadete(id, nombre, direccion, telefono);
                     nuevaLista.Add(nuevoCadete);
                     id++;
                 }

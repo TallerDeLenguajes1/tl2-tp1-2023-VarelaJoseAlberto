@@ -1,32 +1,20 @@
-﻿// Clase base
-using System.IO;
-using PedidosClass;
-using CadeteClass;
-// using AccesoAArchivoClass;
+﻿using CadeteClass;
 using CadeteriaClass;
 using MenuCadeteriaClass;
 using AccesoADatosClass;
+using PedidosClass;
 
 class Program
 {
+
+
     static void Main()
     {
         Console.WriteLine("¡Bienvenido al sistema de gestión de cadeterías!\n");
 
-        // (AccesoADatos accesoDatos, string archivoCadetes, string archivoCadeterias) = SeleccionarTipoAcceso(); // Obtén el objeto de acceso a datos seleccionado y los nombres de archivo
-
-        // var archivos = new ArchivosAArchivo();
         var (accesoDatos, archivoCadetes, archivoCadeterias) = SeleccionarTipoAcceso();
 
-        var listaCadetes = new List<Cadete>();
-        var listaCadeterias = new List<Cadeteria>();
-
-        if (File.Exists(archivoCadetes) && File.Exists(archivoCadeterias))
-        {
-            listaCadetes = accesoDatos.CargarDatosCadetes(archivoCadetes);
-            listaCadeterias = accesoDatos.CargarDatosCadeterias(archivoCadeterias, listaCadetes);
-        }
-        else
+        if (!File.Exists(archivoCadetes) || !File.Exists(archivoCadeterias))
         {
             Console.WriteLine("Los archivos de datos no existen en la ubicación especificada.");
             Console.WriteLine("¿Desea elegir otro tipo de acceso? (S/N)");
@@ -34,19 +22,18 @@ class Program
 
             if (respuesta.Equals("S", StringComparison.OrdinalIgnoreCase))
             {
-                // Proporciona la opción de elegir otro tipo de acceso
                 (accesoDatos, archivoCadetes, archivoCadeterias) = SeleccionarTipoAcceso();
-
-                listaCadetes = accesoDatos.CargarDatosCadetes(archivoCadetes);
-                listaCadeterias = accesoDatos.CargarDatosCadeterias(archivoCadeterias, listaCadetes);
             }
             else
             {
-                // Si el usuario no desea elegir otro tipo de acceso, sale del programa
                 Console.WriteLine("Saliendo del programa.");
                 return;
             }
         }
+
+        var listaCadetes = accesoDatos.CargarDatosCadetes(archivoCadetes);
+        var listaCadeterias = accesoDatos.CargarDatosCadeterias(archivoCadeterias, listaCadetes);
+
 
         // Crear una instancia de MenuCadeterias y usarla para seleccionar una cadetería
         var menuCadeterias = new MenuCadeterias(listaCadeterias);

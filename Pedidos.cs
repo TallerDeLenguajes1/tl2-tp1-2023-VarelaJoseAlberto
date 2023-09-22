@@ -43,23 +43,25 @@ namespace PedidosClass
             cadeteAsignado = null;
         }
 
-        public void MostrarPedidos()
+        public string ObtenerInformacionPedido()
         {
-            Console.WriteLine("\n --------------------------- \n");
-            Console.WriteLine($"Numero de id del Pedido: {IdPedido}");
-            Console.WriteLine($"Nombre del Pedido: {nombrePedido}");
-            Console.WriteLine($"Estado del Pedido: {estado}");
-            Console.WriteLine("Datos del Cliente");
-            NombreCliente.MostrarCliente();
+            string informacion = "";
+            informacion += "\n --------------------------- \n";
+            informacion += $"Numero de id del Pedido: {IdPedido}\n";
+            informacion += $"Nombre del Pedido: {nombrePedido}\n";
+            informacion += $"Estado del Pedido: {estado}\n";
+            informacion += "Datos del Cliente\n";
+            informacion += NombreCliente.ObtenerInformacionCliente() + "\n";
             if (cadeteAsignado == null)
             {
-                Console.WriteLine("No hay asignado cadete");
+                informacion += "No hay asignado cadete\n";
             }
             else
             {
-                Console.WriteLine($"Cadete Asignado: {cadeteAsignado.NombreCadete}");
+                informacion += $"Cadete Asignado: {cadeteAsignado.NombreCadete}\n";
             }
-            Console.WriteLine("\n --------------------------- \n");
+            informacion += "\n --------------------------- \n";
+            return informacion;
         }
 
         public void AsignarCadete(Cadete cadete)
@@ -74,7 +76,7 @@ namespace PedidosClass
                 estado = EstadoPedido.Aceptado;
                 if (estado == EstadoPedido.Rechazado)
                 {
-                    Console.WriteLine("Pedido Rechazado");
+                    // Eliminamos la llamada a Console.WriteLine
                 }
             }
         }

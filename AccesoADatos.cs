@@ -28,6 +28,7 @@ namespace AccesoADatosClass
                 {
                     using (var reader = new StreamReader(ruta))
                     {
+                        int id = 0;
                         while (!reader.EndOfStream)
                         {
                             var linea = reader.ReadLine();
@@ -37,8 +38,9 @@ namespace AccesoADatosClass
                                 string nombre = campos[0];
                                 string telefono = campos[1];
                                 string direccion = campos[2];
-                                cadetes.Add(new Cadete(nombre, telefono, direccion));
+                                cadetes.Add(new Cadete(id, nombre, telefono, direccion));
                             }
+                            id++;
                         }
                     }
                 }

@@ -1,3 +1,5 @@
+using System;
+
 namespace CadeteClass
 {
     public class Cadete
@@ -6,13 +8,17 @@ namespace CadeteClass
         private string nombreCadete;
         private string direccionCadete;
         private string telefonoCadete;
+        private int cantidadPedidosEntregados;
+        private double montoGanado;
 
         public int IdCadete { get => idCadete; set => idCadete = value; }
         public string NombreCadete { get => nombreCadete; set => nombreCadete = value; }
         public string DireccionCadete { get => direccionCadete; set => direccionCadete = value; }
         public string TelefonoCadete { get => telefonoCadete; set => telefonoCadete = value; }
+        public int CantidadPedidosEntregados { get => cantidadPedidosEntregados; set => cantidadPedidosEntregados = value; }
+        public double MontoGanado { get => montoGanado; set => montoGanado = value; }
 
-        public Cadete(string nombreCadete, string direccionCadete, string telefonoCadete)
+        public Cadete(int idCadete, string nombreCadete, string direccionCadete, string telefonoCadete)
         {
             IdCadete = idCadete;
             NombreCadete = nombreCadete;

@@ -28,13 +28,15 @@ namespace ClienteClass
             datosReferenciaDireccionCliente = "";
             direccionCliente = "";
         }
-
-        public void MostrarCliente()
+        public string ObtenerInformacionCliente()
         {
-            Console.WriteLine($"Nombre del Cliente: {nombreCliente}");
-            Console.WriteLine($"Direccion del Cliente: {direccionCliente}");
-            Console.WriteLine($"Telefono del Cliente: {telefonoCliente}");
-            Console.WriteLine($"Datos Referencia Direccion: {datosReferenciaDireccionCliente}");
+            string informacion = "";
+            informacion += $"Nombre del Cliente: {nombreCliente}\n";
+            informacion += $"Direccion del Cliente: {direccionCliente}\n";
+            informacion += $"Telefono del Cliente: {telefonoCliente}\n";
+            informacion += $"Datos Referencia Direccion: {datosReferenciaDireccionCliente}\n";
+            return informacion;
         }
     }
+
 }
